@@ -1,4 +1,5 @@
 # this program gives operations to be performed on array
+# also the sorting process 
 import numpy as np
 
 a1 = np.array([2, 8, 9, 12, 6.8, -1])
@@ -51,6 +52,32 @@ print("Matrix Multiplication\n",a3.dot(b1))
 a4 = np.array([0, np.pi/2, np.pi])
 print("sin values of it\n", np.sin(a4))
 
-a5 = np.array([0, 1, 2, 4])
+a5 = np.array([0, 10, 2, 14, 9, 12])
 print("Expo of all array elements\n", np.exp(a5))
 
+# Sorting
+# with respect to a5 and a2
+print("array elements in sorted order\n ", np.sort(a5)) # single dimensional array
+
+# row-wise sorted array and column-wise sorted array
+print("row-wise sorted array \n", np.sort(a2, axis=1, kind='mergesort'))
+
+# Example of sorting of structured array
+dtypes = [('name', 'S10'), ('grad_year', int), ('cgpa', float)]
+
+# values to be put in array
+values = [('Hrithik', 2002, 6.8), ('Laksh', 2025, 9.7),
+          ('Akshay', 2000, 7.2), ('Aakash', 2023, 7.0)]
+
+# Creating array
+arr = np.array(values, dtype=dtypes)
+print("\nArray sorted by names:\n",
+      np.sort(arr, order='name'))
+
+print("Array sorted by graduation year and then cgpa:\n",
+      np.sort(arr, order=['grad_year', 'cgpa']))
+
+# np as the object 
+# np.array(array variable)
+# inside the bracket we can specify the type of sorting to be done and also the axis if there is a matrix
+# we can also sort array wrt names , graduation year - structured array
