@@ -10,8 +10,6 @@ def greet(fname, sname):
 
 print("start")
 greet(fname="laksh", sname="doshi")
-greet(fname="gauri", sname="tibdelwal")
-greet(fname="kyati", sname="Vora")
 
 # parameters - holes of placeholders that we define in our function for receiving info
 # arguments - actual pieces of info that we supply to these functions.
